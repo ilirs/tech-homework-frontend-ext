@@ -7515,7 +7515,7 @@
   dependencies:
     "object-visit" "^1.0.0"
 
-"mapbox-gl@*":
+"mapbox-gl@*", "mapbox-gl@^2.9.2":
   "integrity" "sha512-RQOUB+l8p5sUyR+vRdd4aRY1/nwOhyYxSWThr2bjXW8u8QtN4cjrb/R7W+CkLyoscISjkSvCS22nDAO69s5T4Q=="
   "resolved" "https://registry.npmjs.org/mapbox-gl/-/mapbox-gl-2.9.2.tgz"
   "version" "2.9.2"
@@ -9601,7 +9601,7 @@
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz"
   "version" "17.0.2"
 
-"react-is@>= 16.8.0":
+"react-is@^18.2.0", "react-is@>= 16.8.0":
   "integrity" "sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w=="
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-18.2.0.tgz"
   "version" "18.2.0"
