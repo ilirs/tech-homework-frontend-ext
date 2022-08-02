@@ -87,10 +87,11 @@ const ResourceItem = ({
   onClick,
 }) => (
   <StyledListItem className={className} onClick={onClick}>
-    <StyledContent size={size}>
+    <StyledContent data-testid="list-item" size={size}>
       {imageUrl && (
         <StyledImage>
           <img
+            data-testid="item-img"
             src={imageUrl}
             width={imageSizes[size]}
             height={imageSizes[size]}

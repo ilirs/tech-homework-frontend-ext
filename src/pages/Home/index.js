@@ -19,6 +19,10 @@ const StyledPopUpContent = styled.div`
 
 const StyledText = styled.div``;
 
+const MapWrapper = styled.div`
+  width: 100%;
+`;
+
 const mapStyle = {
   width: '100%',
   minHeight: '100vh',
@@ -66,33 +70,35 @@ const Home = () => {
         setIsDrawerOpen={setIsDrawerOpen}
         isDrawerOpen={isDrawerOpen}
       />
-      <Map
-        ref={refMap}
-        initialViewState={{
-          latitude: 40,
-          longitude: -100,
-          zoom: 3.5,
-        }}
-        style={mapStyle}
-        mapStyle="mapbox://styles/mapbox/light-v10"
-        mapboxAccessToken={MAP_TOKEN}
-      >
-        {pins}
-        {popupInfo && (
-          <Popup
-            anchor="top"
-            longitude={Number(popupInfo.longitude)}
-            latitude={Number(popupInfo.latitude)}
-            onClose={() => setPopupInfo(null)}
-          >
-            <StyledPopUpContent>
-              <StyledText>{popupInfo.name}</StyledText>
-              <StyledText>{popupInfo.address}</StyledText>
-              <StyledText>{popupInfo.city}</StyledText>
-            </StyledPopUpContent>
-          </Popup>
-        )}
-      </Map>
+      <MapWrapper data-testid="map-gl">
+        <Map
+          ref={refMap}
+          initialViewState={{
+            latitude: 40,
+            longitude: -100,
+            zoom: 3.5,
+          }}
+          style={mapStyle}
+          mapStyle="mapbox://styles/mapbox/light-v10"
+          mapboxAccessToken={MAP_TOKEN}
+        >
+          {pins}
+          {popupInfo && (
+            <Popup
+              anchor="top"
+              longitude={Number(popupInfo.longitude)}
+              latitude={Number(popupInfo.latitude)}
+              onClose={() => setPopupInfo(null)}
+            >
+              <StyledPopUpContent>
+                <StyledText>{popupInfo.name}</StyledText>
+                <StyledText>{popupInfo.address}</StyledText>
+                <StyledText>{popupInfo.city}</StyledText>
+              </StyledPopUpContent>
+            </Popup>
+          )}
+        </Map>
+      </MapWrapper>
     </StyledHome>
   );
 };

@@ -34,6 +34,8 @@ const StyledSidebarContainer = styled.div`
   justify-content: space-between;
 `;
 
+const ListItemWrapper = styled.div``;
+
 const Sidebar = ({ title, setIsDrawerOpen, isDrawerOpen, zoomIntoStore }) => {
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
 
@@ -53,7 +55,7 @@ const Sidebar = ({ title, setIsDrawerOpen, isDrawerOpen, zoomIntoStore }) => {
   );
   return (
     <>
-      <StyledSidebar>
+      <StyledSidebar data-testid="sidebar">
         <StyledSidebarContainer>
           <StyledSidebarTitle>{title}</StyledSidebarTitle>
           {isTabletOrMobile && (
@@ -67,7 +69,9 @@ const Sidebar = ({ title, setIsDrawerOpen, isDrawerOpen, zoomIntoStore }) => {
           )}
         </StyledSidebarContainer>
 
-        {!isTabletOrMobile && itemList}
+        <ListItemWrapper data-testid="list">
+          {!isTabletOrMobile && itemList}
+        </ListItemWrapper>
       </StyledSidebar>
 
       <Drawer isOpen={isDrawerOpen} closeDrawer={() => setIsDrawerOpen(false)}>
